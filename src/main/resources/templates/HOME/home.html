@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Courgette&family=Dancing+Script:wght@400..700&family=Fjalla+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+	
+	<style>
+	.nav-link:hover
+	 {
+	    background-color: rgb(72, 73, 72);
+      text-decoration: none;
+   }
+
+     .card-body>p{
+      font-family: "Courgette", cursive;
+      font-weight: 400;
+      font-style: normal;
+     }
+
+     h1{
+      font-family: "Fjalla One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+     }
+     i{
+      font-family: "Amiri", serif;
+      font-weight: bolder;
+      font-style: italic;
+      color:black
+     }
+  </style>
+  
+</head>
+<body>
+    
+            <!-- -----------------------START OF NAV BAR-------------------------------- -->
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" style="color:rgb(0, 168, 168)">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://i.pinimg.com/564x/85/95/f4/8595f4b711e503bc72fe396e5043e0c2.jpg" alt="Logo" width="60"
+          height="50" style="border-radius: 50px; margin: 0px 50px ">
+        <p style="color:rgb(0, 168, 168);font-weight: 500">New Medical Center</p>
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="  nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"
+              style="font-size: large; font-weight: 500;margin-left: 50px;color:rgb(0, 168, 168)">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" th:href="@{/patient}"
+              style="font-size: large; font-weight: 500;color:rgb(0, 168, 168)">MEDICATED PATIENT'S</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" th:href="@{/doctor}"
+              style="font-size: large; font-weight: 500;color:rgb(0, 168, 168)">DOCTOR'S</a>
+          </li>
+          
+          
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+          style="font-size: large; font-weight: 500;color:rgb(0, 168, 168)">REFERRALS & APPOINTMENTS
+            
+          </a>
+          <ul class="dropdown-menu" style="background-color: rgb(0, 0, 0); box-shadow: 5px 5px rgb(31, 223, 175);">
+            <li><a class="dropdown-item"th:href="@{/bookAppointment}"style="font-size: large; font-weight: 500;color:rgb(0, 168, 168)" >SCHEDULE APPOINTMENT</a></li>
+            <li><a class="dropdown-item" th:href="@{/appointment}" style="font-size: large; font-weight: 500;color:rgb(41, 167, 150)">VIEW APPOINTMENT</a></li>
+            
+          </ul>
+        </li>
+          
+          
+          
+        </ul>
+        <form class="d-flex" role="search" style="margin-left:auto">
+          <a class="btn btn-outline-info" th:href="@{/addNewUser}" type="submit" style="margin-right: 100px;width: 200px;background-color:rgb(31, 223, 175);color:white;box-shadow: 5px 5px rgb(0, 0, 0);
+          font-size: large; font-weight: 500">USER REGISTER</a>
+        </form>
+      </div>
+    </div>
+    
+</nav>
+          <!-- -----------------------END OF NAV BAR-------------------------------- -->
+
+          <!-- -----------------------CAROUSEL START ----------------------------------------------- -->
+         
+          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://americanhospital.qa/american-hospital/images/slides/hospitals-in-qatar.jpg" class="d-block w-100" alt="...">
+               
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://americanhospital.qa/american-hospital/images/slides/banner-3.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://americanhospital.qa/american-hospital/images/slides/best-doctors-in-qatar.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+
+            <!-- -----------------------------CARD AND IT TEXT------------------------------------- -->
+           <div class="card mb-3" style="background-image: linear-gradient(0deg,rgb(255, 255, 255),rgba(88, 253, 203, 0.692));
+           border:none">
+
+			  <div class="card-body">
+			    <h1 class="card-title text-dark" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+			      WHY NMC ?</h1>
+			    <i class="card-text" style="font-weight: 400;font-size: larger;">At <i
+			        style="color:teal;font-size: 20px; font-weight:bolder;">NMC Healthcare,</i> our ethos is that top-notch health
+			      care is the synergy of timeliness, accessibility and life-enhancing medical expertise. Interlacing convenience
+			      in medical care is an innovation that takes the focus solely in providing a patient-centric experience.</i><br>
+			    <br>
+			    <i style="font-size: 20px; font-weight:500;">NMC accredits and certifies a wide range of health care organizations
+			      and manages the evolution of HEDIS®, the performance measurement tool used by more than 90 percent of the
+			      nation’s health plans. HEDIS is the measurement tool used by the nation’s health plans to evaluate their
+			      performance in terms of clinical quality and customer service.</i>
+			    <p class="card-text"><small class="text-body-secondary"></small></p>
+			  </div>
+			</div>
+
+          <!-------------------------------------------------->
+          
+          <div class="row row-cols-1 row-cols-md-4 g-4" style="margin: 5px 10px; padding:10px">
+            <div class="col">
+              <div class="card" style="border-color: rgb(67, 227, 255);border-style:solid;border-width: 5px;box-shadow: 10px 10px rgb(255, 37, 110);">
+                <img src="https://americanhospital.qa/american-hospital/images/facility/dentistry_1.jpg" class="card-img-top" alt="dentist">
+                <div class="card-body">
+                  <h3 class="card-title" style="color:teal; font-size:1.5em">DENTIST</h3>
+                  <p class="card-text">We do identification, prevention and treatment related to teeth</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border-color: rgb(67, 227, 255);border-style:solid;border-width: 5px;box-shadow: 10px 10px rgb(255, 37, 110);">
+                <img src="https://americanhospital.qa/american-hospital/images/Cardiology.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title "style="color:teal; font-size:1.5em">CARDIOLOGY</h3>
+                  <p class="card-text">Cardiology is a medical speciality and branch of internal medicine</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border-color: rgb(67, 227, 255);border-style:solid;border-width: 5px;box-shadow: 10px 10px rgb(255, 37, 110);">
+                <img src="https://americanhospital.qa/american-hospital/images/facility/ent_1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title "style="color:teal; font-size:1.5em">ENT</h3>
+                  <p class="card-text">This department deals with surgical treatment related to head and neck</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style="border-color: rgb(67, 227, 255);border-style:solid;border-width: 5px;box-shadow: 10px 10px rgb(255, 37, 110);">
+                <img src="https://americanhospital.qa/american-hospital/images/internal-medicine-doctor-in-Qatar.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title "style="color:teal; font-size:1.5em">MEDICINE</h3>
+                  <p class="card-text">Manages the prevention and treatment of multi-system diseases</p>
+                </div>
+              </div>
+            </div>
+           </div>
+
+            
+
+     
+  <!-- ---------------------------end of card----------------------------------------------------- -->
+
+<!-- -----------------------------------START OF ABOUT US PAGE--------------------------------------------------------------------- -->
+        
+  <div class="card mb-3" style="max-width: fit-content; height: 100%; padding: 50px; margin-top: 50px; border: none;background-image: linear-gradient(0deg,rgb(53, 230, 215),rgb(231, 231, 231)); box-shadow: 10px 10px rgb(76, 197, 147);">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://americanhospital.qa/american-hospital/images/abt.jpg" class="img-fluid rounded-start" alt="doctor"
+      style="box-shadow: 10px 10px rgb(34, 116, 184);">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h1 class="card-title">ABOUT US</h1>
+        <p class="card-text">New Medical Center, A Multi-Speciality Hospital  strives hard for its excellence in hospital care, advocacy and teaching by continuously challenging the existing boundaries in community health.</p>
+        <p>We serve as the best in diagnostic and therapeutic services within the excellent atmosphere of care, concern and compassion.</p>
+        <p>Our main vision is to be a prolific leader in the health care sector by providing high end services to the community and society. Furthermore, we constantly create a positive healing environment by combining the medical and caring skills of our staff for the purpose of serving the community.</p>
+        <p>Our main motive is to extend hands to the community through activities and create awareness of basic health and safety. Apart from this, we work together as a team to strive hard to create a friendly and caring environment for our patients, by making them feel welcome and courteous at all times, even under great difficulties.</p>
+        <p>Here, we will make sure to provide the highest-quality medicine in accordance with the recommendations of the most experienced doctors.</p>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- ---------------------------------------START OF INFO PAGE---------------------------------- -->
+    <div class="outer-container" style="box-shadow: 20px 10px rgb(73, 204, 221);width: 100%;height:max-content; background-image:linear-gradient(0deg,rgb(68, 190, 211),rgb(255, 255, 255));padding: 20px;margin-top: 50px;">
+
+      <div class="container" style="background-color: black;width: 100%;height:fit-content;margin-top: 50px; display: flex;justify-content: space-around;padding: 30px;box-shadow: 10px 10px rgb(76, 197, 147);">
+        <div class="speciality" style="margin: 25px 50px;">
+          <h3 style="color: aliceblue;">SPECIALITIES</h3>
+          
+          <p class="text-info">Cardiology</p>
+          <p class="text-info">Dentistry</p>
+          <p class="text-info">ENT</p>
+          <p class="text-info">General Surgery</p>
+              
+         
+        </div>
+    
+        <div class="contact" style="margin: auto 50px;">
+          <h3 style="color: aliceblue;">CONTACT</h3>
+          
+          <p class="text-info" style="width: 50%;">NEW MEDCIAL CENTER,
+            No.2 (Old Door No.5),
+             NYC,USA </p>
+          <p class="text-info">Emergency/ Appointment:
+            +91 9698 300 300</p>
+          <p class="text-info">www.NMChospitals.in</p>
+          <p class="text-info">hospitalnmc@gmail.com</p>
+        </div>
+    
+        <div class="speciality" style="margin: 25px 50px;">
+          <h3 style="color: aliceblue;">PATIENT CARE</h3>
+          
+          <p class="text-info">Conditions We Treat</p>
+          <p class="text-info">Emergency Care</p>
+          <p class="text-info">Virtual Urgent Care</p>
+          <p class="text-info">Insurance Billing</p>
+              
+         
+        </div>
+      </div>
+
+    </div>
+  
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+</body>
+</html>

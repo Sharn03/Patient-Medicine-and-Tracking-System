@@ -1,0 +1,50 @@
+ body
+ {
+ 	 background: linear-gradient(0deg, white, whitesomke);
+ 	 background-attachment:fixed;
+ }
+ h1
+ {
+	 background-color:black;
+	 text-transform:uppercase;
+	 letter-spacing:8px;
+	 text-align:center;
+	 color:white;
+	 text-shadow: 5px 5px 10px #86ff0d;
+ 
+ }
+ 
+ h2
+ {
+ 	letter-spacing:4px;
+ 	margin-top:5px;
+ 	
+ }
+ 
+ table.custom-table th 
+{
+   	text-align:center;
+   	border-color:white;
+}
+
+table
+{
+	border:3px;
+	border-style:solid;
+	border-color:black;
+	width:80%;
+	margin:20px auto;
+}
+
+tr,td{
+	border-color: white;
+	border-width:20px;
+	
+}
+button
+{
+	color:white;
+	
+}
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>USER INDEX</title>
+   <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+  
+   
+</head>
+<body  style="background-image: url('https://qatarmedicalcenter.com/assets/images/about2.jpg');background-repeat: no-repeat; background-size: cover;">
+
+
+    <nav class="navbar sticky-top  navbar-expand-lg bg-body-tertiary"
+    style="color:rgb(255, 255, 255);background-color: rgb(18, 182, 204); margin: 0px;padding: 0px; box-shadow: 10px 10px  rgb(34, 184, 152);">
+    <img src="https://i.pinimg.com/564x/85/95/f4/8595f4b711e503bc72fe396e5043e0c2.jpg" alt="Logo" width="60"
+        height="50" style="border-radius: 50px; margin: 10PX 10PX; ">
+
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        style="font-size: 40px; font-weight: 400;margin: auto 150px; color: rgb(255, 255, 255);letter-spacing: 5px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                        <i style="margin-left: 250px;"> REGISTERED USER </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <a th:href="@{/home}" class="btn btn-info btn-lg mb-3" style="margin: 10px 20px;">Back to Home</a>
+
+</nav>
+ 
+	<div class="container my-2" align="center">
+	 <table class = "table table-striped table-responsive-md custom-table " style="margin-top: 100px; background-image: linear-gradient(0deg,rgb(202, 202, 202),rgb(39, 192, 192));">
+        <thead class="table-info text-center">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+             <th>Contact</th>
+             <th>Medical History</th>   
+             <th>Update</th>    
+             <th>Delete</th>     
+        </tr>
+        </thead>
+        <tbody class="table-hover text-center">
+        <tr class="table-Light" th:each="user:${allUserDetails}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.contact}"></td>
+            <td th:text="${user.medicalHistory}"></td>
+            <td><a th:href="@{/updateUser/{id}(id=${user.id})}" class="btn btn-primary">Update</a> </td>
+            <td><a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a> </td>
+            
+        </tr>
+        </tbody>
+    </table>
+    
+	 
+     
+</div>
+</body>
+</html>

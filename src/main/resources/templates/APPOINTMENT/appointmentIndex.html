@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>PATIENT MEDICINE AND APPOINTMENT TRACKING SYSTEM</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body
+    style="background-image: url('https://files.autoblogging.ai/images/doctor-at-home-dubai(4s3d).jpg');background-repeat: no-repeat; background-size: cover;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"
+        style="color:rgb(255, 255, 255);background-color: rgb(18, 182, 204); margin: 0px;padding: 0px; box-shadow: 10px 10px rgb(24, 226, 132);">
+        <img src="https://i.pinimg.com/564x/85/95/f4/8595f4b711e503bc72fe396e5043e0c2.jpg" alt="Logo" width="60"
+            height="50" style="border-radius: 50px; margin: 10PX 10PX; ">
+
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            style="font-size: 40px; font-weight: 400;margin: auto 100px; color: rgb(255, 255, 255);letter-spacing: 5px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                            <i style="margin-left: 150px;"> SCHEDULED APPOINTMENTS</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <a th:href="@{/home}" class="btn btn-info btn-lg mb-3" style="margin: 10px 20px;">Back to Home</a>
+
+    </nav>
+
+    <!-- -----------------------START OF FORM------------------------------------------------------------------- -->
+    <div class="container my-2" align="center">
+        <table class="table table-striped table-responsive-md custom-table "
+            style="margin-top: 100px; background-image: linear-gradient(0deg,rgb(202, 202, 202),rgb(39, 192, 192));">
+            <thead class="table-info text-center" style="font-size:20px;">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Scheduled Date</th>
+                    <th>Scheduled Time</th>
+                    <th>Regarding</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tbody class="table-hover" style="font-size:20px">
+                <tr class="table-Light text-center" th:each="appointment:${allAppointmentDetails}">
+                    <td th:text="${appointment.name}"></td>
+                    <td th:text="${appointment.age}"></td>
+                    <td th:text="${appointment.contact}"></td>
+                    <td th:text="${appointment.email}"></td>
+                    <td th:text="${appointment.gender}"></td>
+                    <td th:text="${appointment.date}"></td>
+                    <td th:text="${appointment.timing}"></td>
+                    <td th:text="${appointment.regarding}"></td>
+                    <td><a th:href="@{/updateAppointment/{id}(id=${appointment.id})}" class="btn btn-success">Update</a>
+                    </td>
+                    <td><a th:href="@{/deleteAppointment/{id}(id=${appointment.id})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/bookAppointment}" class="btn btn-warning btn-lg mb-3"
+            style="background-color:rgb(0, 0, 0); border-color:white;color: white;">Schedule Appointment</a>
+
+
+    </div>
+</body>
+
+</html>
